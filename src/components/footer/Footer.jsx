@@ -107,12 +107,40 @@ const Footer = () => {
                     {/* CTA Block */}
                     <div className="space-y-4">
                         <h3 className="text-sm font-semibold text-black dark:text-white">
-                            Start creating
+                            Social Links
                         </h3>
 
-                        <p className="text-sm text-gray-600 dark:text-gray-400">
-                            Generate your first AI image today.
-                        </p>
+                        <div>
+                            <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                                <li>
+                                    <Link
+                                        href="https://twitter.com/"
+                                        target="_blank"
+                                        className="hover:text-black dark:hover:text-white transition"
+                                    >
+                                        Twitter
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        href="https://www.linkedin.com/"
+                                        target="_blank"
+                                        className="hover:text-black dark:hover:text-white transition"
+                                    >
+                                        LinkedIn
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        href="https://www.instagram.com/"
+                                        target="_blank"
+                                        className="hover:text-black dark:hover:text-white transition"
+                                    >
+                                        Instagram
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
 
                         <Link
                             href="/signup"
