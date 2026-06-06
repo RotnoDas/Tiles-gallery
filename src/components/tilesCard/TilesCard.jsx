@@ -42,6 +42,7 @@ const TilesCard = ({ tiles }) => {
                     <Image
                         src={image}
                         alt={title}
+                        loading='eager'
                         fill
                         className="
                             object-cover 
