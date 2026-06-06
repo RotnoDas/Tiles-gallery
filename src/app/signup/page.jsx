@@ -3,8 +3,12 @@ import React from 'react';
 import { Check } from "@gravity-ui/icons";
 import { Button, Card, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
 import { authClient } from '@/lib/auth-client';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { FaGoogle } from 'react-icons/fa6';
 
 const SignUpPage = () => {
+    const router = useRouter();
     const handleSubmit = async(event) => {
         event.preventDefault();
         const name = event.target.name.value;
@@ -19,15 +23,28 @@ const SignUpPage = () => {
             image: image,
             callbackURL: "/signin",
         });
-        console.log("Auth Response:", { data, error });
-
-        console.log("Form Data:", { name, image, email, password });
+        if(data) {
+            router.push("/signin");
+        } else {
+            console.log(error);
+        }
     }
-    return (
-        <Card className="border mx-auto w-125 py-10 mt-5">
-            <h1 className="text-center text-2xl font-bold">Sign Up</h1>
 
-            <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={handleSubmit}>
+    const handleGoogleSignUp = async () => {
+        const { data, error } = await authClient.signIn.social({
+            provider: "google",
+            callbackURL: "/",
+        });
+
+        console.log("Google Sign-Up Response:", { data, error });
+    }
+
+    return (
+        <main className="min-h-screen px-4 py-10 sm:px-6 lg:px-8 flex items-center justify-center bg-linear-to-b from-white to-gray-50">
+            <Card className="w-full max-w-md border border-gray-200 bg-white/95 px-4 py-8 shadow-lg shadow-gray-200/60 sm:px-6 sm:py-10">
+            <h1 className="text-center text-2xl sm:text-3xl font-bold text-gray-950">Sign Up</h1>
+
+            <Form className="mx-auto flex w-full max-w-sm flex-col gap-4 pt-6" onSubmit={handleSubmit}>
                 <TextField isRequired name="name" type="text">
                     <Label>Name</Label>
                     <Input placeholder="Enter your name" />
@@ -84,17 +101,42 @@ const SignUpPage = () => {
                     <FieldError />
                 </TextField>
 
-                <div className="flex gap-2">
-                    <Button type="submit">
+                <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                    <Button type="submit" className="w-full">
                         <Check />
                         Submit
                     </Button>
-                    <Button type="reset" variant="secondary">
+                    <Button type="reset" variant="secondary" className="w-full">
                         Reset
                     </Button>
                 </div>
+
+                <div className="flex items-center gap-3 py-2">
+                    <div className="h-px flex-1 bg-gray-200" />
+                    <p className="text-xs font-semibold tracking-[0.2em] text-gray-500">OR</p>
+                    <div className="h-px flex-1 bg-gray-200" />
+                </div>
+
+                <div>
+                    <Button
+                        type="button"
+                        variant="secondary"
+                        onPress={handleGoogleSignUp}
+                        className="w-full border border-gray-200 bg-white text-gray-900 font-semibold hover:bg-gray-50"
+                    >
+                        <FaGoogle /> Continue with Google
+                    </Button>
+                </div>
+
+                <p className="text-center text-sm text-gray-600">
+                    Already have an account?{' '}
+                    <Link href="/signin" className="font-semibold text-gray-950 hover:underline">
+                        Login
+                    </Link>
+                </p>
             </Form>
-        </Card>
+            </Card>
+        </main>
     );
 };
 
