@@ -25,7 +25,7 @@ const ProfilePage = () => {
     }
 
     return (
-        <main className="min-h-screen px-4 py-10 sm:px-6 lg:px-8 bg-linear-to-b from-white to-gray-50">
+        <main className="min-h-screen px-4 py-10 sm:px-6 lg:px-8 bg-linear-to-b from-white to-gray-50 animate__zoomIn">
             <section className="mx-auto w-full max-w-5xl">
                 <div className="mb-8 text-center lg:text-left">
                     <p className="text-sm sm:text-base font-semibold uppercase tracking-[0.2em] text-gray-500 mb-2">
