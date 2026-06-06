@@ -5,7 +5,6 @@ const Feature = async() => {
     const response = await fetch("https://tiles-gallery-green.vercel.app/data.json");
     const data = await response.json();
     const featuredTiles = data.slice(0, 8);
-    console.log(featuredTiles);
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
             <h2 className="text-2xl md:text-3xl font-bold text-center md:text-left mb-6">Featured Tiles</h2>
