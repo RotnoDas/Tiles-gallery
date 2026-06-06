@@ -18,8 +18,6 @@ const SignInPage = () => {
             rememberMe: true,
             callbackURL: "/",
         });
-
-        console.log("Auth Response:", { data, error });
     }
 
     const handleGoogleSignIn = async () => {
@@ -32,7 +30,7 @@ const SignInPage = () => {
     }
 
     return (
-        <main className="min-h-screen px-4 py-10 sm:px-6 lg:px-8 flex items-center justify-center bg-gradient-to-b from-white to-gray-50">
+        <main className="min-h-screen px-4 py-10 sm:px-6 lg:px-8 flex items-center justify-center bg-linear-to-b from-white to-gray-50">
             <Card className="w-full max-w-md border border-gray-200 bg-white/95 px-4 py-8 shadow-lg shadow-gray-200/60 sm:px-6 sm:py-10">
             <h1 className="text-center text-2xl sm:text-3xl font-bold text-gray-950">Sign In</h1>
 

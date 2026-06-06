@@ -39,11 +39,8 @@ import React, { useState, useEffect } from 'react';
 import { Input } from "@heroui/react";
 
 const AllTilesPage = () => {
-    // State for storing fetched data and search term
     const [data, setData] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
-
-    // Fetch data using useEffect since this is now a Client Component
     useEffect(() => {
         const fetchTiles = async () => {
             const response = await fetch("https://tiles-gallery-green.vercel.app/data.json");
@@ -52,8 +49,6 @@ const AllTilesPage = () => {
         };
         fetchTiles();
     }, []);
-
-    // Filter the array based on the search term
     const filteredTiles = data.filter((tiles) =>
         tiles.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -72,7 +67,6 @@ const AllTilesPage = () => {
                 </p>
             </section>
 
-            {/* HeroUI Search Input Added Here */}
             <div className="mb-8 max-w-md">
                 <Input
                     isClearable
@@ -87,7 +81,6 @@ const AllTilesPage = () => {
             </div>
 
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {/* Map over filteredTiles instead of the raw data */}
                 {filteredTiles.length > 0 ? (
                     filteredTiles.map((tiles) => {
                         return (

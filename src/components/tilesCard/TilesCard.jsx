@@ -36,7 +36,6 @@ const TilesCard = ({ tiles }) => {
             hover:-translate-y-2
         ">
 
-            {/* Image Container */}
             <div className="relative w-full h-56 sm:h-48 md:h-64 lg:h-56 overflow-hidden bg-gray-50 p-2">
                 <div className="relative w-full h-full overflow-hidden rounded-2xl">
                     <Image
@@ -55,7 +54,6 @@ const TilesCard = ({ tiles }) => {
                     />
                 </div>
 
-                {/* Top-Left: Category */}
                 <div className="absolute top-4 left-4 z-10">
                     <Chip
                         size="sm"
@@ -67,7 +65,6 @@ const TilesCard = ({ tiles }) => {
                     </Chip>
                 </div>
 
-                {/* Top-Right: Stock Status */}
                 <div className="absolute top-4 right-4 z-10">
                     {inStock ? (
                         <div className="flex items-center gap-1.5 backdrop-blur-md bg-green-100/70 py-1 px-3 rounded-full border border-green-200">
@@ -88,7 +85,6 @@ const TilesCard = ({ tiles }) => {
                 </div>
             </div>
 
-            {/* Content Section */}
             <Card.Content className="px-4 flex flex-col gap-1">
                 <div className="space-y-1">
                     {/* Title size reduced to text-lg and font-bold */}
@@ -101,7 +97,6 @@ const TilesCard = ({ tiles }) => {
                     </p>
                 </div>
 
-                {/* Architectural Specs */}
                 <div className="flex flex-wrap items-center gap-2 mt-3">
                     <div className="flex items-center gap-1.5 text-xs text-slate-700 font-semibold bg-slate-100 border border-slate-200 py-1.5 px-3 rounded-lg flex-1 sm:flex-none justify-center">
                         <span className="text-sm text-slate-500">⛶</span> <span className="truncate">{dimensions}</span>
@@ -112,7 +107,6 @@ const TilesCard = ({ tiles }) => {
                 </div>
             </Card.Content>
 
-            {/* Footer Section */}
             <Card.Footer className="px-4 sm:px-6 py-4 flex flex-wrap gap-3 justify-between items-center bg-gray-50/50 border-t border-gray-100 mt-2">
                 {/* Simplified Price Display */}
                 <div className="flex flex-col">
@@ -124,7 +118,6 @@ const TilesCard = ({ tiles }) => {
                     </span>
                 </div>
 
-                {/* View Details Button */}
                 <Link href={`/all-tiles/${tiles.id}`}>
                     <Button
                         radius="full"

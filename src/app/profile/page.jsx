@@ -40,7 +40,7 @@ const ProfilePage = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-[320px_minmax(0,1fr)] gap-6 lg:gap-8 items-start">
                     <Card className="border border-gray-200 bg-white/95 p-6 sm:p-8 shadow-lg shadow-gray-200/60">
                         <div className="flex flex-col items-center text-center gap-4">
-                            <div className="rounded-full bg-linear-to-b from-gray-950 to-gray-700 p-1 shadow-xl shadow-gray-300/50">
+                            <div className="rounded-full bg-white p-1 shadow-xl shadow-gray-300/50">
                                 <Avatar className="h-24 w-24 sm:h-28 sm:w-28 border-4 border-white">
                                     <Avatar.Image alt={user.name} src={user.image} referrerPolicy="no-referrer" />
                                     <Avatar.Fallback>{user.name?.[0]}</Avatar.Fallback>
