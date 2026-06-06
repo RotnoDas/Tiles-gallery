@@ -15,7 +15,7 @@ const Banner = () => {
                     </p>
                     
                     {/* Main Headline */}
-                    <h1 className="text-4xl md:text-6xl font-bold mb-4 max-w-2xl leading-tight">
+                    <h1 className="text-4xl md:text-6xl font-bold mb-4 max-w-2xl leading-tight animate__animated animate__bounce">
                         Discover Your Perfect Aesthetic
                     </h1>
                     
