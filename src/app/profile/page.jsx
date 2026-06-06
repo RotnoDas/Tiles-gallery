@@ -1,7 +1,8 @@
 "use client";
 import { UserUpdate } from '@/components/user_update/UserUpdate';
 import { authClient } from '@/lib/auth-client';
-import { Avatar, Card, Spinner } from '@heroui/react';
+import { Avatar, Card } from '@heroui/react';
+import Link from 'next/link';
 import React from 'react';
 
 const ProfilePage = () => {
@@ -12,17 +13,13 @@ const ProfilePage = () => {
         return (
             <main className="min-h-screen px-4 py-10 sm:px-6 lg:px-8 flex items-center justify-center bg-linear-to-b from-white to-gray-50">
                 <Card className="w-full max-w-lg border border-gray-200 bg-white/95 px-6 py-10 text-center shadow-lg shadow-gray-200/60 sm:px-8">
-                    {/* <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-500">Profile</p>
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-500">Profile</p>
                     <h1 className="mt-3 text-2xl sm:text-3xl font-black tracking-tight text-gray-950">
                         Sign in to view your profile
                     </h1>
                     <p className="mt-3 text-sm sm:text-base leading-7 text-gray-600">
-                        Your account details, avatar, and activity will appear here once you are signed in.
-                    </p> */}
-                    <div className="flex flex-col items-center gap-2">
-                        <Spinner size="xl" />
-                        {/* <span className="text-xs text-muted">Extra Large</span> */}
-                    </div>
+                        <Link href="/signin" className="font-semibold text-gray-950 hover:underline">Sign in <span aria-hidden="true">&rarr;</span></Link>
+                    </p>
                 </Card>
             </main>
         );
