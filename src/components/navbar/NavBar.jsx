@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const NavBar = () => {
     return (
-        <div className="sticky top-0 z-50 bg-white border-b px-4 sm:px-6">
+        <div className="sticky top-0 z-50 bg-white text-stone-900 border-b px-4 sm:px-6">
             <nav className="flex flex-col md:flex-row justify-between items-center py-4 max-w-7xl mx-auto w-full gap-4 md:gap-0">
                 <div className="flex gap-2 items-center w-full md:w-auto justify-center md:justify-start">
                     <Link href={"/"} className="flex gap-2 items-center">
