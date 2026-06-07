@@ -6,7 +6,7 @@ import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { FaGoogle } from 'react-icons/fa6';
-import { toast } from 'react-toastify';
+import { toast, Zoom } from 'react-toastify';
 
 const SignUpPage = () => {
     const router = useRouter();
