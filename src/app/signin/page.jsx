@@ -34,7 +34,7 @@ const SignInPage = () => {
             });
         }
         else {
-            toast.success('Account created successfully', {
+            toast.success('Account login successfully', {
                 position: "bottom-center",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -53,34 +53,6 @@ const SignInPage = () => {
             provider: "google",
             callbackURL: "/",
         });
-
-        if (error) {
-            toast.error(error.message || 'Failed to create account', {
-                position: "bottom-center",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark",
-                transition: Zoom,
-            });
-        }
-        else {
-            toast.success('Account created successfully', {
-                position: "bottom-center",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark",
-                transition: Zoom,
-            });
-        }
-
     }
 
     return (
