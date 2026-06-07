@@ -23,9 +23,16 @@ const SignUpPage = () => {
             password: password, // required
             image: image,
             callbackURL: "/signin",
+            fetchOptions: {
+                onSuccess: async () => {
+                    await authClient.signOut();
+                    router.push("/signin");
+                    router.refresh();
+                },
+            },
         });
         if (data) {
-            router.push("/signin");
+            // router.push("/signin");
             toast.success('Account created successfully', {
                 position: "bottom-center",
                 autoClose: 5000,
