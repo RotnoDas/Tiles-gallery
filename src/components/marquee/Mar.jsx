@@ -10,7 +10,7 @@ const Mar = async() => {
             <div className='bg-[#F3F3F3] p-4'>
                 <div className='flex items-center gap-5'>
                     <div>
-                        <button className='bg-[#D72050] py-2.25 px-6 font-medium text-[20px] leading-7.5 tracking-[0%] text-[#FFFFFF]'>Latest Products</button>
+                        <button className='bg-[#D72050] px-6 font-medium text-[20px] leading-7.5 tracking-[0%] text-[#FFFFFF]'>Latest Products</button>
                     </div>
                     <div>
                         <Marquee pauseOnHover={true} speed={100} gradient={false}>
